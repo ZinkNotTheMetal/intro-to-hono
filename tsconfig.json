@@ -3,14 +3,23 @@
     "target": "ESNext",
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "module": "NodeNext",
+    "baseUrl": "./",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "typeRoots": ["./node_modules/@types"],
     "types": [
       "node"
     ],
+    "allowImportingTsExtensions": true,
     "strict": true,
+    "noEmit": true,
     "outDir": "./dist",
-    "verbatimModuleSyntax": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules"]
+  "tsc-alias": {
+    "resolveFullPaths": true
+  }
 }

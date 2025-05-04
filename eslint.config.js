@@ -12,6 +12,7 @@ export default antfu({
   },
 }, {
   rules: {
+    'unused-imports/no-unused-imports': 'warn',
     'ts/no-redeclare': 'off',
     'ts/consistent-type-definitions': ['error', 'type'],
     'no-console': ['warn'],
