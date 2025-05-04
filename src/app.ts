@@ -1,15 +1,17 @@
+import index from '@/routes/index.route.js'
+
+import configureOpenApi from './lib/configure-open-api.js'
 import createApp from './lib/create-app.js'
 
 const app = createApp()
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+const routes = [
+  index
+]
 
-app.get('/info', (c) => {
-  c.var.logger.info("Welcome to Pino logger! (info)")
-
-  return c.json({ logger: "Logged Properly" })
+configureOpenApi(app)
+routes.forEach((route) => {
+  app.route("/", route)
 })
 
 export default app
